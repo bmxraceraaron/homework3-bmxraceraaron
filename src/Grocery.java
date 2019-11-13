@@ -18,6 +18,12 @@ public class Grocery extends Item implements Tax, Discount{
     }
 
     public double computeTotalPrice(){
-        
+        double discount = computeDiscount();
+        return(units * price) - discount + computeTax();
+    }
+
+    public void displayGrocery(){
+        super.displayItem();
+        System.out.println("Units: "+ units + "Price: "+ price + "Discount: "+ discount + "Tax: ");
     }
 }
