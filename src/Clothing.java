@@ -7,6 +7,11 @@ public class Clothing extends Item implements Tax, Discount{
 
     public Clothing(String i, String n, String brand, double price, double units, double discount){
         super(i, n);
+        this.units = units;
+        this.price = price;
+        this.brand = brand;
+        this.discount = discount;
+
     }
 
     @Override
@@ -25,7 +30,7 @@ public class Clothing extends Item implements Tax, Discount{
 
     public void displayClothing(){
         super.displayItem();
-        System.out.println("Units: "+ units +"Price: "+ price +"Brand"+ brand +"Discount: "+discount);
+        System.out.println("Units: "+ units +" Price: "+ price +" Brand"+ brand +" Discount: "+discount+" Tax: " + taxp +" Total Price: " + computeTotalPrice());
     }
 
 }
